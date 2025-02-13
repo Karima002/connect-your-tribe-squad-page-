@@ -1,10 +1,25 @@
 {% render 'partials/head.liquid', title: 'Squad page' %}
 
+<main> 
+
+  <section class="first">
+    <h1>Meet our tribe</h1>
+  </section>
+
+  <section class="second">
+    <a href="">
+
+    </a>
+  </section>
+
+</main>
+
+{% render 'partials/foot.liquid', squads: squads %}
+
+{% comment %} 
 <h2>Students</h2>
 <ul>
   {% for person in persons %}
     <li><a href="/student/{{ person.id }}">{{ person.name }}</a></li>
   {% endfor %}
-</ul>
-
-{% render 'partials/foot.liquid', squads: squads %}
+</ul> {% endcomment %}
