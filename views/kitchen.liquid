@@ -1,5 +1,19 @@
 {% render 'partials/head.liquid', title: 'Squad page' %}
 
-<h1>iets</h1>
+<main class="main-kitchen">
+
+    <h1 class="heading-dish">Wat is het favoriete gerecht van de squad leden?</h1>
+
+    <ul class="squad-kitchen">
+        {% for person in persons %}
+            <li class="card">
+                <img src="https://github.com/{{ person.github_handle }}.png">
+                <h2>{{ person.name }}</h2>
+                <p>{{ person.fav_kitchen }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+</main>
 
 {% render 'partials/foot.liquid', squads: squads %}

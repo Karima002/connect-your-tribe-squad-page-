@@ -61,9 +61,9 @@ app.get('/', async function (request, response) {
 
 // nieuwe route voor kitchen (favorite gerecht)
 app.get('/kitchen', async function (request, response) {
-  const personResponse = await fetch('https://fdnd.directus.app/items/person/?filter=%7B%22fav_kitchen%22:%7B%22_nnull%22:%22true%22%7D%7D&fields=fav_kitchen,name')
+  const personResponse = await fetch('https://fdnd.directus.app/items/person/?filter=%7B%22fav_kitchen%22:%7B%22_nnull%22:%22true%22%7D%7D&fields=name,fav_kitchen,avatar')
   const personResponseJSON = await personResponse.json()
-  response.render('index.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
+  response.render('kitchen.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
 })
 
 

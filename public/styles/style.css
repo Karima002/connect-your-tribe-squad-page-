@@ -1,13 +1,22 @@
+
 @font-face {
     font-family: "shadowInto";
-    src: url("public/fonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf") format("TrueType");
+    src: url("/fonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf") format("TrueType");
     font-weight: 300;
     font-style: normal;
 }
 
+@font-face {
+    font-family: "shadowIntoTwo";
+    src: url("/fonts/ShadowsIntoLightTwo-Regular.ttf") format("TrueType");
+    font-style: normal;
+}
+
+
 body {
     /* fonts */
     --font-default: "shadowInto", sans-serif;
+    --font-default-second: "shadowIntoTwo", sans-serif;
 
     /* colours */
     --background-color: black;
@@ -36,25 +45,21 @@ section {
 .first {
     justify-content: center;
     align-items: center;
+    background: var(--background-color);
+
 }
 
 .second {
     justify-content: center;
     align-items: end;
-
 }
 
-
-.first {
-    background: var(--background-color);
-}
-
-
-h1 {
+.heading-frontpage {
     font-family: var(--font-default);
     color: var(--text-color);
     font-size: 6rem;
     font-style: italic;
+    animation: textease 1.5s cubic-bezier(.34,.75,.83,.67) 
 }
 
 ul {
@@ -72,3 +77,53 @@ ul {
     }
 }
 
+
+/* styling kitchen.liquid */
+.heading-dish {
+    font-family: var(--font-default);
+    color: var(--text-color);
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+
+}
+
+.main-kitchen {
+    background: var(--background-color);
+}
+
+.squad-kitchen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+    padding: 2em 1em 0 2em;
+}
+
+h2 {
+    color: var(--text-color);
+
+}
+
+p {
+    color: var(--text-color);
+}
+
+.card {
+    border: 1px solid var(--text-color);
+    padding: 2em;
+    &:hover {
+        transform: translateY(-10px);
+        }
+    
+}
+
+
+@keyframes textease {
+    0% {
+    translate: 100%; /* Begin de tekst buiten het scherm naar rechts*/
+    }
+    100% {
+        translate: 0; /* Laat de tekst volledig naar zijn eindpositie bewegen. */
+    }
+}
