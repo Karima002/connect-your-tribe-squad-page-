@@ -6,10 +6,13 @@
     <ul class="squad-kitchen">
         {% for person in persons %}
             <li class="card">
-                {% if person.avatar != "" and person.avatar != null %}
+                {% comment %} Als person.avatar is niet gelijk aan 'niks' en person.avatar is niet gelijk aan null toon dan de avatar {% endcomment %}
+                {% if person.avatar != "" and person.avatar != null %} 
                     <img src="{{ person.avatar }}" alt="profile Image">
+                {% comment %} Anders laad de standaard github_handle in {% endcomment %}
                 {% else %}
                     <img src="https://github.com/{{ person.github_handle }}.png">
+                {% comment %} Einde if state {% endcomment %}
                 {% endif %}
                 <h2>{{ person.name }}</h2>
                 <p>{{ person.fav_kitchen }}</p>
@@ -20,3 +23,4 @@
 </main>
 
 {% render 'partials/foot.liquid', squads: squads %}
+

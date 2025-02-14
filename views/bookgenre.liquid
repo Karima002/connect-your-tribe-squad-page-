@@ -2,14 +2,14 @@
 
 <main class="main-kitchen">
 
-    <h1 class="heading-dish">Wat is het favoriete gerecht van de squad leden?</h1>
+    <h1 class="heading-dish">Wat de favoriete bookgenre van de squad leden?</h1>
 
     <ul class="squad-kitchen">
         {% for person in persons %}
             <li class="card">
                 <img src="{{ person.avatar }}" alt="Profile Image">
                 <h2>{{ person.name }}</h2>
-                <p>{{ person.fav_book_ }}</p>
+                <p>{{ person.fav_book_genre }}</p>
             </li>
         {% endfor %}
     </ul>
