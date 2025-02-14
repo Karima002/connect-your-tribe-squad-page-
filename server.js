@@ -61,11 +61,18 @@ app.get('/', async function (request, response) {
 
 // nieuwe route voor kitchen (favorite gerecht)
 app.get('/kitchen', async function (request, response) {
-  const personResponse = await fetch('https://fdnd.directus.app/items/person/?filter=%7B%22fav_kitchen%22:%7B%22_nnull%22:%22true%22%7D%7D&fields=name,fav_kitchen,avatar')
+  const personResponse = await fetch('https://fdnd.directus.app/items/person/?filter=%7B%22fav_kitchen%22:%7B%22_nnull%22:%22true%22%7D%7D&fields=name,fav_kitchen,avatar,github_handle')
   const personResponseJSON = await personResponse.json()
   response.render('kitchen.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
 })
 
+
+// nieuwe route voor kitchen (favorite gerecht)
+app.get('/bookgenre', async function (request, response) {
+  const personResponse = await fetch('https://fdnd.directus.app/items/person/?filter=%7B%22fav_book_genre%22:%7B%22_nnull%22:%22true%22%7D%7D&fields=fav_book_genre,name,avatar')
+  const personResponseJSON = await personResponse.json()
+  response.render('bookgenre.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
+})
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 app.post('/', async function (request, response) {

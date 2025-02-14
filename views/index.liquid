@@ -18,9 +18,11 @@
         <img src="assets/person2.svg"> 
       </li>
 
-      <li class="blue-person">
-        <img src="assets/person1.svg"> 
-      </li>
+      <a href="/bookgenre">
+        <li class="blue-person">
+          <img src="assets/person1.svg"> 
+        </li>
+      </a>
 
       <li>
         <img src="assets/person2.svg"> 
@@ -37,11 +39,3 @@
 </div>
 
 {% render 'partials/foot.liquid', squads: squads %}
-
-{% comment %} 
-<h2>Students</h2>
-<ul>
-  {% for person in persons %}
-    <li><a href="/student/{{ person.id }}">{{ person.name }}</a></li>
-  {% endfor %}
-</ul> {% endcomment %}
